@@ -12,16 +12,12 @@
   </head>
 
   <body>
-
-
-
-<% if notice %>
-<%= render 'layouts/alert' %>
-<% end %>
-
-<% if alert %>
-<%= render 'layouts/alert' %>
-<% end %>
+      <% if notice %>
+        <p class="notice alert-success p-2 m-0"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-warning p-2 m-0"><%= alert %></p>
+      <% end %>
     <%= yield %>
 
 </body>

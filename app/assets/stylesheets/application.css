@@ -40,11 +40,26 @@ body {
     background-color: #2d639f;
     background-image: linear-gradient( 45deg, #3678c2, #2d639f);
     color: #fff;
+    height: 100vh;
 }
 
 .profile-picture {
     width:200px;
     height:200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-custom {
+    background: #3678c2;
+    color: #fff;
+}
+
+.btn-custom:active {
+    background: #2d639f;
+    color: #fff;
 }
 
 @media screen and (max-height: 450px) {
