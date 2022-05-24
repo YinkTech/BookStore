@@ -19,46 +19,34 @@ body {
     transition: background-color .5s;
 }
 
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-image: linear-gradient(to top, #4f82bd, #3778c2);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
+.nav-bar {
+    background-attachment: fixed;
+    background-color: #2d639f;
+    background-image: linear-gradient( 45deg, #3678c2, #2d639f);
     color: #fff;
-    display: block;
-    transition: 0.3s;
+    height: 120px;
+    align-items: center;
+    width: 100%;
+    
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
+.nav-icon {
+    font-size:30px;
+    cursor:pointer;
 }
 
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+.home-body {
+    background-attachment: fixed;
+    background-color: #2d639f;
+    background-image: linear-gradient( 45deg, #3678c2, #2d639f);
+    color: #fff;
 }
 
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
+.profile-picture {
+    width:200px;
+    height:200px;
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    
 }
