@@ -12,7 +12,7 @@
     <li class="nav-item pb-2 d-flex"> 
         <i class="bi bi-journal-check fs-1 align-self-center "></i>
         <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
-        <a href="" class="text-white "> Shelfed Books </a>
+        <%= link_to "My Book Shelf", items_path, class:"text-white" %>
         <p class=" border-bottom pt-2"></p>
         </span>
     </li>
@@ -26,7 +26,8 @@
     <li class="nav-item pb-2 d-flex"> 
         <i class="bi bi-journal fs-1 align-self-center "></i>
         <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
-        <a href="" class="text-white "> My Book Shelf </a>
+        <%= link_to "Shelfed Books", groups_path, class:"text-white" %>
+        <a href="" class="text-white ">  </a>
         <p class=" border-bottom pt-2"></p>
         </span>
     </li>

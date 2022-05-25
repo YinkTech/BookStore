@@ -1,14 +1,36 @@
-<p style="color: green"><%= notice %></p>
+<%= render 'header/nav' %>
+<div class="container my-3 ">
+<h1>Catalogue</h1>
 
-<h1>Groups</h1>
-
-<div id="groups">
+<div id="groups" class="mb-5 pb-5">
   <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
+
+  <div class="card mb-4">
+    <div class="card-body row align-items-center">
+      <div class="d-flex col-9">
+        <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+        <p class="px-3 p-md-3 align-self-center">
+        <strong class="d-block mb-4 mb-md-5"> <%= link_to group.name, group, class:"capitalize"%> </strong>
+        <strong class="d-block"><%= group.created_at.strftime("%d %b %Y") %> </strong>
+        </p>
+      </div>
+
+      <div class="col-3 text-end">
+        <p class="card-text  mb-4 "><%= group.icon %></p>
+        <%= button_to "Delete", group, method: :delete, class:"btn btn-primary" %>
+      </div>
+  
+    </div>
+  </div>
   <% end %>
+  
+    <hr />
+    <hr />
+    <h3>Numers of Item: <%= @groups.count %></h3>
 </div>
 
-<%= link_to "New group", new_group_path %>
+
+<div class="text-center fixed-bottom pt-2 pb-3 bg-light">
+<%= link_to "New group", new_group_path, class:"btn btn-custom w-75 fs-3 mx-auto text-white" %>
+</div>
+</div>

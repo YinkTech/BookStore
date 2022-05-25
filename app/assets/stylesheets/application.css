@@ -15,6 +15,7 @@
  */
 
 body {
+    background-color: rgb(241, 241, 241);
     font-family: "Lato", sans-serif;
     transition: background-color .5s;
 }
@@ -24,7 +25,6 @@ body {
     background-color: #2d639f;
     background-image: linear-gradient( 45deg, #3678c2, #2d639f);
     color: #fff;
-    height: 120px;
     align-items: center;
     width: 100%;
     
@@ -46,6 +46,11 @@ body {
 .profile-picture {
     width:200px;
     height:200px;
+}
+
+.item-icon {
+    width:120px;
+    height:120px;
 }
 
 a {
