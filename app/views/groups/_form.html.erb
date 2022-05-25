@@ -21,6 +21,10 @@
     <%= form.text_field :icon %>
   </div>
 
+    <div>
+    <%= form.number_field :user_id, id: :group_user_id, value: current_user.id, type: :hidden, class:"form-control" %>
+    </div>
+
   <div>
     <%= form.submit %>
   </div>

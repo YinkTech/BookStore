@@ -4,9 +4,9 @@
 
 
 <div id="items" class="mb-5 pb-5">
-  <% running_total = 0 %>
-    <% @items.each do |item| %>
-
+<% running_total = 0 %>
+  <% @items.each do |item| %>
+  <% if item.user == current_user %>
     <div class="card mb-4">
       <div class="card-body row align-items-center"">
         <div class="d-flex col-9 ">
@@ -25,8 +25,9 @@
         <% running_total = running_total + (item.amount) %>
       </div>
     </div>
-    <% end %>
-    <hr />
+  <% end %> 
+  <% end %> 
+     <hr />
     <hr />
     <h3>Numers of Item: <%= @items.count %></h3>
     <h3>Total Amount: <%= number_to_currency(running_total) %></h3>

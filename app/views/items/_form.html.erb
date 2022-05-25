@@ -24,6 +24,10 @@
     <%= form.number_field :amount, required: true, class:"form-control" %>
   </div>
 
+  <div>
+    <%= form.number_field :user_id, id: :item_user_id, value: current_user.id, type: :hidden, class:"form-control" %>
+  </div>
+
   <div class="my-3">
     <%= form.submit "Add Item", required: true, class:"btn btn-custom p-3 mt-3"  %>
   </div>
