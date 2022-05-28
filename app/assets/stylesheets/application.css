@@ -15,9 +15,9 @@
  */
 
 body {
-    background-color: rgb(241, 241, 241);
-    font-family: "Lato", sans-serif;
-    transition: background-color .5s;
+      background-color: rgb(241, 241, 241);
+      font-family: "Lato", sans-serif;
+      transition: background-color  .5s;
 }
 
 .nav-bar {

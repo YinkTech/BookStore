@@ -1,5 +1,7 @@
-class Group < ApplicationRecord
-    belongs_to :user
+# frozen_string_literal: true
 
-    has_many :items, dependent: :destroy
+class Group < ApplicationRecord
+  belongs_to :user
+
+  has_many :items, dependent: :destroy
 end
