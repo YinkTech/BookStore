@@ -29,6 +29,8 @@ Style/ClassAndModuleChildren:
   Enabled: false
 Style/EachForSimpleLoop:
   Enabled: false
+Style/FetchEnvVar:
+  Enabled: false
 Style/AndOr:
   Enabled: false
 Style/DefWithParentheses:
