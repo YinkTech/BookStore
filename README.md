@@ -1,5 +1,5 @@
-## MVP-APP
-This project is a transactions invetory system. a user can access the system by login or signing up. The system is divided in to two part the group transactions, and external transaction, and it fully mobile resposive  
+## BookStore
+This is a Bookstore app that allows users to add there book in the different categories and also uncategorized. as the user may desire. Each users cannot see each other registered books.
 
 ##### Prerequisites
 
@@ -11,8 +11,8 @@ The setups steps expect following tools installed on the system.
 
 ## 1. Check out the repository
 ```shell+
-git clone [git@github.com:YinkTech/MVP-APP.git](https://github.com/YinkTech/MVP-APP)
-cd MVP-APP
+git clone [git@github.com:YinkTech/BookStore.git](https://github.com/YinkTech/BookStore/tree/development)
+cd BookStore
 ```
 
 ## 2. Check your Ruby version
@@ -60,7 +60,7 @@ Navigate to the new route http://127.0.0.1:3000/
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/YinkTech/MVP-APP/issues).
+Feel free to check the [issues page](https://github.com/YinkTech/BookStore/issues).
 
 ## Show your support
 
