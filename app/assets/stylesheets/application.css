@@ -15,62 +15,57 @@
  */
 
 body {
-      background-color: rgb(241, 241, 241);
-      font-family: "Lato", sans-serif;
-      transition: background-color  .5s;
+  background-color: rgb(241, 241, 241);
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
 }
 
 .nav-bar {
-    background-attachment: fixed;
-    background-color: #2d639f;
-    background-image: linear-gradient( 45deg, #3678c2, #2d639f);
-    color: #fff;
-    align-items: center;
-    width: 100%;
-    
+  background-attachment: fixed;
+  background-color: #2d639f;
+  background-image: linear-gradient( 45deg, #3678c2, #2d639f);
+  color: #fff;
+  align-items: center;
+  width: 100%; 
 }
 
 .nav-icon {
-    font-size:30px;
-    cursor:pointer;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 form {
-    display: inline;
+  display: inline;
 }
 
 .home-body {
-    background-attachment: fixed;
-    background-color: #2d639f;
-    background-image: linear-gradient( 45deg, #3678c2, #2d639f);
-    color: #fff;
-    height: 100vh;
+  background-attachment: fixed;
+  background-color: #2d639f;
+  background-image: linear-gradient(45deg, #3678c2, #2d639f);
+  color: #fff;
+  height: 100vh;
 }
 
 .profile-picture {
-    width:200px;
-    height:200px;
+  width: 200px;
+  height: 200px;
 }
 
 .item-icon {
-    width:120px;
-    height:120px;
+  width: 120px;
+  height: 120px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .btn-custom {
-    background: #3678c2;
-    color: #fff;
+  background: #3678c2;
+  color: #fff;
 }
 
 .btn-custom:active {
-    background: #2d639f;
-    color: #fff;
-}
-
-@media screen and (max-height: 450px) {
-    
+  background: #2d639f;
+  color: #fff;
 }
