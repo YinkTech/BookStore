@@ -17,16 +17,15 @@
 body {
   background-color: rgb(241, 241, 241);
   font-family: "Lato", sans-serif;
-  transition: background-color .5s;
 }
 
 .nav-bar {
   background-attachment: fixed;
   background-color: #2d639f;
-  background-image: linear-gradient( 45deg, #3678c2, #2d639f);
+  background-image: linear-gradient(45deg, #3678c2, #2d639f);
   color: #fff;
   align-items: center;
-  width: 100%; 
+  width: 100%;
 }
 
 .nav-icon {

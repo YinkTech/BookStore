@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   resources :groups
   resources :items, except: %i[show edit update] do
