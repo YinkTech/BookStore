@@ -1,0 +1,35 @@
+<%= render 'header/nav' %>
+
+<div class="bg-white d-flex justify-content-between p-1">
+  <p>Total number of uncategorized items: </p>
+  <%= @uncategorized.count %>
+</div>
+<div class="px-3 pt-2">
+  <h3  class="text-center my-3">Uncategorized Books</h3>
+  <div class="pb-3">
+    <div class="list-group">
+      <% @uncategorized.each do |uncategorized| %>
+        <div class="list-group-item d-flex justify-content-between mt-2">
+          <div class="d-flex">
+            <div>
+              <img src="https://via.placeholder.com/120" class="img-thumbnail">
+            </div>
+            <div class="ms-3 mt-3">
+              <p class="py-3"><%= uncategorized.name %></p>
+              <span class="text"><%= uncategorized.created_at.strftime("%d %b %Y") %></span>
+            </div>
+          </div>
+          <div class="text-end">
+            <p class="py-3"><b>$<%= uncategorized.amount %></b></p>
+          <div>
+          <div>
+            <%= link_to 'Remove Item', uncategorized, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-devise text-light btn-sm" %>
+          </div>
+        </div>
+        </div>
+      </div><br>
+    <% end %>
+  <div class="text-center fixed-bottom pt-2 pb-3 bg-light">
+<%= link_to "New Item", new_item_path, class:"btn btn-custom w-75 fs-3 mx-auto text-white" %>
+</div>
+  </div>

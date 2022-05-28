@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :groups
-  resources :items
+  resources :items, except: [:show, :edit, :update] do
+    get :uncategorized, on: :collection
+  end
   devise_for :users
   get 'home/index'
   root 'home#index'

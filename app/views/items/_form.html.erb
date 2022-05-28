@@ -1,6 +1,5 @@
-<%= render 'header/nav' %>
-<span class="container mt-2">Item</span>
 <div class="container text-center mt-5">
+<h3 class="my-5"> New Item   </h3>
 <%= form_with(model: item) do |form| %>
   <% if item.errors.any? %>
     <div style="color: red">
@@ -22,6 +21,14 @@
   <div class="mt-4">
     <%= form.label :amount, style: "display: block", class:"form-label" %>
     <%= form.number_field :amount, required: true, class:"form-control" %>
+  </div>
+
+  <div class= "control_group mt-2 ">
+    <%= form.label :group, class: "control-group my-3"%>
+    <div >
+    
+    <%= collection_select( :item, :group_id, Group.all, :id, :name, {}, { :multiple => false } ) %>
+    </div>
   </div>
 
   <div>

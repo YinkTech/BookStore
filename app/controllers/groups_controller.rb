@@ -5,11 +5,13 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.order('name ASC')
   end
 
   # GET /groups/1 or /groups/1.json
   def show
+    @group = Group.find(params[:id])
+    @items = current_user.items.where('group_id =?', @group).all.order('created_at DESC')
   end
 
   # GET /groups/new
@@ -24,16 +26,11 @@ class GroupsController < ApplicationController
 
   # POST /groups or /groups.json
   def create
-    # @group = Group.new(group_params)
     @group = current_user.groups.build(group_params)
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to group_url(@group), notice: "Group was successfully created." }
-        format.json { render :show, status: :created, location: @group }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
+    if @group.save
+      redirect_to groups_path
+    else
+      redirect_to :new_group, notice: 'Invalid entry'
     end
   end
 
@@ -48,6 +45,11 @@ class GroupsController < ApplicationController
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def uncategorized
+    @uncategorized = current_user.items.where(group_id: nil).all.order('created_at DESC')
+    @amount_sum = current_user.items.sum(:amount)
   end
 
   # DELETE /groups/1 or /groups/1.json

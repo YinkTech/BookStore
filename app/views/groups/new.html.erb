@@ -1,9 +1,9 @@
-<h1>New group</h1>
-
+<%= render 'header/nav' %>
+<h3 class="container mt-2 text-center mt-5">New Group</h3>
 <%= render "form", group: @group %>
 
 <br>
 
-<div>
+<div class="text-center">
   <%= link_to "Back to groups", groups_path %>
 </div>

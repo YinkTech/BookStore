@@ -35,6 +35,10 @@ body {
     cursor:pointer;
 }
 
+form {
+    display: inline;
+}
+
 .home-body {
     background-attachment: fixed;
     background-color: #2d639f;
