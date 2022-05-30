@@ -10,6 +10,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
+    @user = User.find(current_user.id)
     @group = Group.find(params[:id])
     @items = current_user.items.where('group_id =?', @group).all.order('created_at DESC')
   end

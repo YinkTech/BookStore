@@ -1,35 +1,38 @@
 <%= render 'header/nav' %>
+<div class="container my-3 ">
+<h1  class="text-center my-3">Uncatalogued Books </h1>
 
-<div class="bg-white d-flex justify-content-between p-1">
-  <p>Total number of uncategorized items: </p>
-  <%= @uncategorized.count %>
+
+<div id="items" class="mb-5 pb-5">
+<% running_total = 0 %>
+  <% @uncategorized.each do |uncategorized| %>
+    <div class="card mb-4">
+      <div class="card-body row align-items-center"">
+        <div class="d-flex col-9 ">
+          <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+          <p class="px-3 p-md-3 align-self-center">
+          <strong class="d-block mb-4 mb-md-5 capitalize"> <%= uncategorized.name %> </strong>
+          <strong class="d-block"><%= uncategorized.created_at.strftime("%d %b %Y") %> </strong>
+          
+          </p>
+        </div>
+
+        <div class="col-3 text-end">
+          <p class="card-text  mb-4"><%= number_to_currency(uncategorized.amount) %></p>
+          <%= button_to "Delete", uncategorized, method: :delete, class:"btn btn-primary" %>
+        </div>
+        <% running_total = running_total + (uncategorized.amount) %>
+      </div>
+    </div>
+  <% end %> 
+     <hr />
+    <hr />
+    <h3>Total Amount: <%= number_to_currency(running_total) %></h3>
+   <h3>Numers of Item: <%= @uncategorized.count %></h3>
 </div>
-<div class="px-3 pt-2">
-  <h3  class="text-center my-3">Uncategorized Books</h3>
-  <div class="pb-3">
-    <div class="list-group">
-      <% @uncategorized.each do |uncategorized| %>
-        <div class="list-group-item d-flex justify-content-between mt-2">
-          <div class="d-flex">
-            <div>
-              <img src="https://via.placeholder.com/120" class="img-thumbnail">
-            </div>
-            <div class="ms-3 mt-3">
-              <p class="py-3"><%= uncategorized.name %></p>
-              <span class="text"><%= uncategorized.created_at.strftime("%d %b %Y") %></span>
-            </div>
-          </div>
-          <div class="text-end">
-            <p class="py-3"><b>$<%= uncategorized.amount %></b></p>
-          <div>
-          <div>
-            <%= link_to 'Remove Item', uncategorized, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-devise text-light btn-sm" %>
-          </div>
-        </div>
-        </div>
-      </div><br>
-    <% end %>
-  <div class="text-center fixed-bottom pt-2 pb-3 bg-light">
+
+
+<div class="text-center fixed-bottom pt-2 pb-3 bg-light">
 <%= link_to "New Item", new_item_path, class:"btn btn-custom w-75 fs-3 mx-auto text-white" %>
 </div>
-  </div>
+</div>

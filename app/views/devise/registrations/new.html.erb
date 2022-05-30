@@ -4,15 +4,24 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { data: { turbo: false} } ) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-
   <div class="field my-4">
     <%= f.label :name, class:"form-label" %><br />
-    <%= f.text_field :name, autofocus: true, required: true, class:"form-control" %>
+    <%= f.text_field :name, required: true, autofocus: true, class:"form-control" %>
+  </div>
+
+  <div class="field my-4">
+    <%= f.label :username, class:"form-label" %><br />
+    <%= f.text_field :username, required: true, autofocus: true, class:"form-control" %>
   </div>
 
   <div class="field my-4">
     <%= f.label :email, class:"form-label" %><br />
     <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", class:"form-control" %>
+  </div>
+
+  <div class="field my-4">
+    <%= f.label :image, "Upload profile image", class:"form-label" %><br />
+    <%= f.file_field :image, as: :file, required: false, label: false, class:"form-control" %>
   </div>
 
   <div class="field mb-4">

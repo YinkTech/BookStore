@@ -4,14 +4,25 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+
   <div class="field my-4">
     <%= f.label :name, class:"form-label" %><br />
-    <%= f.text_field :name, autofocus: true, required: true, class:"form-control" %>
-  </div>
+    <%= f.text_field :name, required: true, autofocus: true, class:"form-control" %>
+   </div>
+
+  <div class="field my-4">
+    <%= f.label :username, class:"form-label" %><br />
+    <%= f.text_field :username, required: true, autofocus: true, class:"form-control" %>
+   </div>
 
   <div class="field my-4">
     <%= f.label :email, class:"form-label" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+  </div>
+
+  <div class="field my-4">
+    <%= f.label :image, "Upload profile image", class:"form-label" %><br />
+    <%= f.file_field :image, as: :file, required: false, label: false, class:"form-control" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

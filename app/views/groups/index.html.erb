@@ -1,6 +1,6 @@
 <%= render 'header/nav' %>
 <div class="container my-3 ">
-<h1 class="text-center my-3">Books Catalogue</h1>
+<h1 class="text-center my-3"> Catalogued Books</h1>
 
 <div id="groups" class="mb-5 pb-5">
   <% @groups.each do |group| %>
@@ -8,7 +8,11 @@
   <div class="card mb-4">
     <div class="card-body row align-items-center">
       <div class="d-flex col-9">
-        <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+      
+      <div class="card-text ">
+      <%= image_tag group.icon_url.to_s, class:"img-fluid p-1 border border-2 item-icon", style:"height:120px; width:120px;" %>
+      </div>
+         
         <p class="px-3 p-md-3 align-self-center">
         <strong class="d-block mb-4 mb-md-5"> <%= link_to group.name, group, class:"capitalize"%> </strong>
         <strong class="d-block"><%= group.created_at.strftime("%d %b %Y") %> </strong>
@@ -16,7 +20,7 @@
       </div>
 
       <div class="col-3 text-end">
-        <p class="card-text  mb-4 "><%= group.icon %></p>
+        
         <%= button_to "Delete", group, method: :delete, class:"btn btn-primary" %>
       </div>
   

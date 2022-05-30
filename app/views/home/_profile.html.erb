@@ -2,12 +2,11 @@
 <div class="container">
 <div class="profile-img-cont text-center pt-4">
 <div class="profile-picture mx-auto border border-1 rounded">
-<img src="" alt="user-img" class="img-fluid" >
+
 
 </div>
-
-<h2 class="pt-5" > <%= @current_user.name %> </h2>
-
+<small class="fs-2"><%= @user.image %></small>
+<%=  @user.image_url %>
 </div>
 
 <ul class="nav d-flex flex-column">
@@ -21,14 +20,14 @@
     <li class="nav-item pb-2 d-flex"> 
         <i class="bi bi-journal-text fs-1 align-self-center "></i>
         <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
-        <a href="" class="text-white ">  Uncategorized Books </a>
+        <a href="" class="text-white ">  Uncatalogued Books </a>
         <p class=" border-bottom pt-2"></p>
         </span>
     </li>
     <li class="nav-item pb-2 d-flex"> 
         <i class="bi bi-journal fs-1 align-self-center "></i>
         <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
-        <%= link_to "Shelfed Books", groups_path, class:"text-white" %>
+        <%= link_to "Catalogued Books", groups_path, class:"text-white" %>
         <a href="" class="text-white ">  </a>
         <p class=" border-bottom pt-2"></p>
         </span>

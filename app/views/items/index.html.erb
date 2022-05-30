@@ -9,7 +9,11 @@
     <div class="card mb-4">
       <div class="card-body row align-items-center"">
         <div class="d-flex col-9 ">
-          <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+        <% if item.group_id %>
+        <%= image_tag item.group.icon_url, class:"img-fluid p-1 border border-2 item-icon" %>
+        <% else %>
+                  <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+        <% end %>
           <p class="px-3 p-md-3 align-self-center">
           <strong class="d-block mb-4 mb-md-5 capitalize"> <%= item.name %> </strong>
           <strong class="d-block"><%= item.created_at.strftime("%d %b %Y") %> </strong>
@@ -27,7 +31,7 @@
   <% end %> 
      <hr />
     <hr />
-    <h3>Total Amount: <%= @amount_sum %> <%= number_to_currency(running_total) %></h3>
+    <h3>Total Amount: <%= number_to_currency(running_total) %></h3>
    <h3>Numers of Item: <%= @items.count %></h3>
 </div>
 
