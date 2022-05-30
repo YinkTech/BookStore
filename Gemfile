@@ -9,7 +9,6 @@ gem 'jbuilder'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.3'
 gem 'sprockets-rails'
-gem 'sqlite3', '~> 1.4'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -20,7 +19,12 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'sqlite3', '~> 1.4'
   gem 'web-console'
+end
+
+group :production do
+  gem 'pg', '~> 1.3', '>= 1.3.5'
 end
 
 group :test do
