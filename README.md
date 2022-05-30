@@ -1,6 +1,11 @@
 ## BookStore
-This is a Bookstore app that allows users to add there book in the different categories and also uncategorized. as the user may desire. Each users cannot see each other registered books.
+> This is a Bookstore app that allows users to store there books in the different catelogue and also uncatelogue. as the user may desire. Each users cannot see each other registered books.
 
+### User Profile
+![screenshot](./app/assets/images/profile.png)
+
+### Catelogued Page
+![screenshot](./app/assets/images/catelogue.png)
 ##### Prerequisites
 
 The setups steps expect following tools installed on the system.
