@@ -1,12 +1,12 @@
 <div class="home-body">
 <div class="container">
 <div class="profile-img-cont text-center pt-4">
-<div class="profile-picture mx-auto border border-1 rounded">
-
+<div class="profile-picture mx-auto border border-2 rounded">
+<%= image_tag @user.image_url.to_s, class:"img-fluid profile-picture p-1" %>
 
 </div>
-<small class="fs-2"><%= @user.image %></small>
-<%=  @user.image_url %>
+<small class="fs-2"><%= @user.username %></small>
+
 </div>
 
 <ul class="nav d-flex flex-column">
