@@ -14,6 +14,9 @@ The setups steps expect following tools installed on the system.
 - Ruby [3.0.1](https://github.com/ruby/ruby/tree/ruby_3_1)
 - Rails [7.0.1](https://github.com/rails/rails/tree/v7.0.1)
 
+## Live Demo
+
+[Visit the Website](https://book-store-railsapp.herokuapp.com/)
 ## 1. Check out the repository
 ```shell+
 git clone [git@github.com:YinkTech/BookStore.git](https://github.com/YinkTech/BookStore/tree/development)
