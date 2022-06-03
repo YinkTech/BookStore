@@ -1,0 +1,43 @@
+<%= render 'header/nav' %>
+<div class="container my-3">
+    <div class="">
+      <% running_total = 0 %>
+        <% @items.includes([:group]).each do |item| %>
+          <div class="card mb-4">
+            <div class="card-body row align-items-center"">
+                <div class="d-flex col-9 ">
+                      <% if item.group_id %>
+                      <%= image_tag item.group.icon_url, class:"img-fluid p-1 border border-2 item-icon" %>
+                      <% else %>
+                      <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+                      <% end %>
+                    <p class="px-3 p-md-3 align-xself-center">
+                      <strong class="d-block mb-3 mb-md-3 capitalize"> <%= item.name %> </strong>
+                      <% if item.user_id %>
+                      <strong class="d-block mb-3 mb-md-3 capitalize"> Author: <%= @user.username %> </strong>
+                      <% end %>
+                      <strong class="d-block"><%= item.created_at.strftime("%d %b %Y") %> </strong>        
+                    </p>
+                </div>
+                <div class="col-3 text-end">
+                  <p class="card-text  mb-4"><%= number_to_currency(item.amount) %></p>
+                  <%= button_to "Delete", item, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary" %>
+                </div>
+            </div>
+      <% running_total = running_total + (item.amount) %>
+          </div>
+          <% end %>
+    </div>
+    <hr />
+    <hr />
+    <hr />
+    <h3>Total Amount: <%= @amount_sum %> <%= number_to_currency(running_total) %></h3>
+    <h3>Numers of Item: <%= @items.count %></h3>
+    <%= link_to "Back to Groups", groups_path, class:"btn btn-outline-info" %> | 
+    <%= button_to "Delete Group", @group, method: :delete, class:"btn btn-outline-danger d-inline" %>
+</div>
+
+
+
+
+

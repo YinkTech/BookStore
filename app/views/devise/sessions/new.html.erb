@@ -1,0 +1,30 @@
+<div class="container text-center mt-5 ">
+<h2 class="">Please Sign in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { data: { turbo: false} } ) do |f| %>
+  <div class="field">
+    <%= f.label :email, class:"form-label" %><br />
+    <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", class:"form-control mb-4" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class:"form-label" %><br />
+    <%= f.password_field :password, required: true, autocomplete: "current-password", class:"form-control mb-4" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field mb-3">
+      <%= f.check_box :remember_me, class:"form-check-input" %>
+      <%= f.label :remember_me, class:"form-check-label " %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Sign in", class:"btn btn-custom text-white mb-3" %>
+  </div>
+<% end %>
+  <%= link_to "Sign up", new_user_registration_path, class:"btn btn-outline-primary " %> |
+<%= render "devise/shared/links" %>
+
+
+</div>

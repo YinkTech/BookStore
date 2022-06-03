@@ -1,0 +1,38 @@
+<%= render 'header/nav' %>
+<div class="container my-3 ">
+<h1  class="text-center my-3">Uncatalogued Books </h1>
+
+
+<div id="items" class="mb-5 pb-5">
+<% running_total = 0 %>
+  <% @uncategorized.each do |uncategorized| %>
+    <div class="card mb-4">
+      <div class="card-body row align-items-center"">
+        <div class="d-flex col-9 ">
+          <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+          <p class="px-3 p-md-3 align-self-center">
+          <strong class="d-block mb-4 mb-md-5 capitalize"> <%= uncategorized.name %> </strong>
+          <strong class="d-block"><%= uncategorized.created_at.strftime("%d %b %Y") %> </strong>
+          
+          </p>
+        </div>
+
+        <div class="col-3 text-end">
+          <p class="card-text  mb-4"><%= number_to_currency(uncategorized.amount) %></p>
+          <%= button_to "Delete", uncategorized, method: :delete, class:"btn btn-primary" %>
+        </div>
+        <% running_total = running_total + (uncategorized.amount) %>
+      </div>
+    </div>
+  <% end %> 
+     <hr />
+    <hr />
+    <h3>Total Amount: <%= number_to_currency(running_total) %></h3>
+   <h3>Numers of Item: <%= @uncategorized.count %></h3>
+</div>
+
+
+<div class="text-center fixed-bottom pt-2 pb-3 bg-light">
+<%= link_to "New Item", new_item_path, class:"btn btn-custom w-75 fs-3 mx-auto text-white" %>
+</div>
+</div>

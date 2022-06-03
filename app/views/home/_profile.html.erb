@@ -1,0 +1,57 @@
+<div class="home-body">
+<div class="container">
+<div class="profile-img-cont text-center pt-4">
+<div class="profile-picture mx-auto border border-2 rounded">
+<%= image_tag @user.image_url.to_s, class:"img-fluid profile-picture p-1" %>
+
+</div>
+<small class="fs-2"><%= @user.username %></small>
+
+</div>
+
+<ul class="nav d-flex flex-column">
+    <li class="nav-item pb-2 d-flex"> 
+        <i class="bi bi-journal-check fs-1 align-self-center "></i>
+        <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
+        <%= link_to "My Book Shelf", items_path, class:"text-white" %>
+        <p class=" border-bottom pt-2"></p>
+        </span>
+    </li>
+    <li class="nav-item pb-2 d-flex"> 
+        <i class="bi bi-journal-text fs-1 align-self-center "></i>
+        <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
+        <a href="" class="text-white ">  Uncatalogued Books </a>
+        <p class=" border-bottom pt-2"></p>
+        </span>
+    </li>
+    <li class="nav-item pb-2 d-flex"> 
+        <i class="bi bi-journal fs-1 align-self-center "></i>
+        <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
+        <%= link_to "Catalogued Books", groups_path, class:"text-white" %>
+        <a href="" class="text-white ">  </a>
+        <p class=" border-bottom pt-2"></p>
+        </span>
+    </li>
+    <li class="nav-item pb-2 d-flex"> 
+        <i class="bi bi-person-fill fs-1 align-self-center "></i>
+        <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
+        <%= link_to "Edit Profile", edit_user_registration_path, class:"text-white" %>
+        <p class=" border-bottom pt-2"></p>
+        </span>
+    </li>
+    <li class="nav-item pb-2 d-flex"> 
+        <i class="bi bi-box-arrow-left fs-1 align-self-center "></i>
+        <span class="d-inline-block w-75 px-3 pt-3 align-self-center">
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:" btn p-0 m-0 text-white" %>
+         <p class=" border-bottom pt-2"></p>
+        </span>
+    </li>
+</ul>
+
+
+
+
+
+
+</div>
+</div>
