@@ -1,0 +1,33 @@
+<div class="container text-center mt-3">
+  <%= form_with(model: group) do |form| %>
+    <% if group.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+        <ul>
+          <% group.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :name, style: "display: block", class:"form-label" %>
+      <%= form.text_field :name, required: true, class:"form-control" %>
+    </div>
+
+    <div class="mt-4">
+      <%= form.label :icon, style: "display: block", class:"form-label" %>
+      <%= form.file_field :icon, required: true, class:"form-control" %>
+    </div>
+
+      <div class="mt-4">
+      <%= form.number_field :user_id, id: :group_user_id, value: current_user.id, type: :hidden, class:"form-control" %>
+      </div>
+
+    <div class="mt-4">
+      <%= form.submit "Add Group", required: true, class:"btn btn-custom p-3 mt-3" %>
+    </div>
+  <% end %>
+</div>

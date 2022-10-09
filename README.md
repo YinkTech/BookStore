@@ -1,24 +1,81 @@
-# README
+## BookStore
+> This is a Bookstore app that allows users to store there books in the different catelogue and also uncatelogue. as the user may desire. Each users cannot see each other registered books.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### User Profile
+![screenshot](./app/assets/images/profile.png)
 
-Things you may want to cover:
+### Catelogued Page
+![screenshot](./app/assets/images/catelogue.png)
+##### Prerequisites
 
-* Ruby version
+The setups steps expect following tools installed on the system.
 
-* System dependencies
+- Github
+- Ruby [3.0.1](https://github.com/ruby/ruby/tree/ruby_3_1)
+- Rails [7.0.1](https://github.com/rails/rails/tree/v7.0.1)
 
-* Configuration
+## Live Demo
 
-* Database creation
+[Visit the Website](https://book-store-railsapp.herokuapp.com/)
+## 1. Check out the repository
+```shell+
+git clone [git@github.com:YinkTech/BookStore.git](https://github.com/YinkTech/BookStore/tree/development)
+cd BookStore
+```
 
-* Database initialization
+## 2. Check your Ruby version
 
-* How to run the test suite
+```shell
+ruby -v
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+The ouput should start with `ruby 3.0.1`
 
-* Deployment instructions
+## 3. Install dependencies
 
-* ...
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+
+```shell
+bundle && yarn
+```
+
+## 4. Initialize the database
+
+```shell
+rails db:create db:migrate db:seed
+```
+## 5. Start the server
+
+Start the server by running:
+
+```ruby
+rails s
+```
+Navigate to the new route http://127.0.0.1:3000/
+
+## Built With
+
+- Ruby
+- Ruby on Rails
+
+## Author
+👤 **Author**
+
+- GitHub: [@YinkTech](https://github.com/yinktech)
+- Twitter: [@YinkTech](https://twitter.com/yink_tech)
+- LinkedIn: [Ayeni Olayinka](https://www.linkedin.com/in/yinktech/)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/YinkTech/BookStore/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+*  Gregoire Vella (Design from [Behance](https://www.behance.net/gregoirevella), [Design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding))
+## 📝 License
+
+This project is [MIT](https://creativecommons.org/licenses/by-nc/4.0/) licensed.

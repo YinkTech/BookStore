@@ -1,0 +1,43 @@
+<div class="container text-center mt-5">
+<h3 class="my-5"> New Item   </h3>
+<%= form_with(model: item) do |form| %>
+  <% if item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block", class:"form-label" %>
+    <%= form.text_field :name, required: true, class:"form-control" %>
+  </div>
+
+  <div class="mt-4">
+    <%= form.label :amount, style: "display: block", class:"form-label" %>
+    <%= form.number_field :amount, required: true, class:"form-control" %>
+  </div>
+
+  <div class= "control_group mt-2 ">
+    <%= form.label :group, class: "control-group my-3"%>
+    <div >
+
+    <%= collection_select( :item, :group_id, Group.order(:name), :id, :name, {:prompt => 'Choose a Category'}, { :multiple => false } ) %>
+   
+    </div>
+  </div>
+
+  <div>
+    <%= form.number_field :user_id, id: :item_user_id, value: current_user.id, type: :hidden, class:"form-control" %>
+  </div>
+
+  <div class="my-3">
+    <%= form.submit "Add Item", required: true, class:"btn btn-custom p-3 mt-3"  %>
+  </div>
+<% end %>
+</div>

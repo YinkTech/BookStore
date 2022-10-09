@@ -1,0 +1,20 @@
+<header class="nav-bar p-2 sticky-top">
+
+<div class="d-flex justify-content-around py-4">
+<%= link_to root_path do %>
+<b class="nav-icon text-white"> &#9776; </b>
+ <% end %>
+<b class="nav-text text-uppercase fs-1 float-none"> Book Store </b>
+
+<b class="nav-icon" id="navbarText" >  &#x2315; </b>
+
+</div> 
+
+<div class="d-flex justify-content-around text-center">
+ <%= link_to "My Book Shelf", items_path, class:"text-white" %>
+  <%= link_to 'Uncatalogued', uncategorized_items_path, class: "text-white" %>
+ <%= link_to "Catalogued", groups_path, class:"text-white" %>
+</div>
+
+
+</header>

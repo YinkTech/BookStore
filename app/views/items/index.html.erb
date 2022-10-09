@@ -1,0 +1,42 @@
+<%= render 'header/nav' %>
+<div class="container my-3 ">
+<h1  class="text-center my-3">List of Books </h1>
+
+
+<div id="items" class="mb-5 pb-5">
+<% running_total = 0 %>
+  <% @items.each do |item| %>
+    <div class="card mb-4">
+      <div class="card-body row align-items-center"">
+        <div class="d-flex col-9 ">
+        <% if item.group_id %>
+        <%= image_tag item.group.icon_url, class:"img-fluid p-1 border border-2 item-icon" %>
+        <% else %>
+                  <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+        <% end %>
+          <p class="px-3 p-md-3 align-self-center">
+          <strong class="d-block mb-4 mb-md-5 capitalize"> <%= item.name %> </strong>
+          <strong class="d-block"><%= item.created_at.strftime("%d %b %Y") %> </strong>
+          
+          </p>
+        </div>
+
+        <div class="col-3 text-end">
+          <p class="card-text  mb-4"><%= number_to_currency(item.amount) %></p>
+          <%= button_to "Delete", item, method: :delete, class:"btn btn-primary" %>
+        </div>
+        <% running_total = running_total + (item.amount) %>
+      </div>
+    </div>
+  <% end %> 
+     <hr />
+    <hr />
+    <h3>Total Amount: <%= number_to_currency(running_total) %></h3>
+   <h3>Numers of Item: <%= @items.count %></h3>
+</div>
+
+
+<div class="text-center fixed-bottom pt-2 pb-3 bg-light">
+<%= link_to "New Item", new_item_path, class:"btn btn-custom w-75 fs-3 mx-auto text-white" %>
+</div>
+</div>
